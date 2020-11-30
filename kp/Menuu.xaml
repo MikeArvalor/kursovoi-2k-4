@@ -1,0 +1,81 @@
+﻿<Window x:Class="kp.Menuu" 
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+xmlns:local="clr-namespace:kp" 
+mc:Ignorable="d" 
+Height="500" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Label x:Name="label1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="83,10,0,0" Width="154" Height="25"/>
+        <Button x:Name="butto"   HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Click="butto_Click" Height="35" >
+            <Image Source="img/undo.png" Height="25" Width="30"/>
+        </Button>
+        <Button x:Name="button2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Click="button2_Click" RenderTransformOrigin="-0.456,-14.499"  Height="35" Margin="745,0,0,0">
+            <Image Source="img/close.png"/>
+        </Button>
+        <Image Source="img/Opel.png" MaxWidth="300" Canvas.Left="164" RenderTransformOrigin="0.938,0.59" Canvas.Top="8" Margin="242,10,423,384" OpacityMask="#FFB91A1A"/>
+        <Image Source="img/Skoda.png" MaxWidth="300"   Canvas.Left="164" RenderTransformOrigin="0.925,0.574" Canvas.Top="8" Margin="359,0,295,381"/>
+        <Image Source="img/Volk.png" MaxWidth="300" Height="135" Canvas.Left="164" RenderTransformOrigin="0.925,0.574" Canvas.Top="8" Margin="468,-22,148,359"/>
+        <TabControl Margin="0,87,0,0" Background="#FFDCCFCF">
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock>Отчет</TextBlock>
+                </TabItem.Header>
+                <Grid Grid.Column="0" Grid.Row="0" Margin="10" >
+                    <Label x:Name="label7" Content="Дата начала " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="98,10,0,0"/>
+                    <Label x:Name="label8" Content="Дата окончания" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="436,10,0,0"/>
+                    <DatePicker x:Name="Date2"  HorizontalAlignment="Left" Margin="204,12,0,0" 
+VerticalAlignment="Top" 
+SelectedDateChanged="DatePickerFrom1_SelectedDateChanged" RenderTransformOrigin="-0.328,0.579" 
+/>
+                    <DatePicker x:Name="Date3" HorizontalAlignment="Left" Margin="557,12,0,0" 
+VerticalAlignment="Top" 
+SelectedDateChanged="DatePickerBefore_SelectedDateChanged" RenderTransformOrigin="-0.652,-0.197" 
+/>
+                    <DataGrid  ItemsSource="{Binding}"  x:Name="User_Grid2" Background="#FFFAFAFA" HorizontalAlignment="Left" Height="156" Margin="187,77,0,0" VerticalAlignment="Top" Width="460" SelectionChanged="User_Grid_SelectionChanged" AlternatingRowBackground="LightSkyBlue" HorizontalGridLinesBrush="#FFDEDEDE" BorderBrush="#89000000" Foreground="#DD000000"/>
+
+                    <Button x:Name="Otchet" Content="Отчет" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Otchet_click" Margin="341,36,0,0">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFD1D3F1" Offset="0.504"/>
+                                <GradientStop Color="#FF3D46FF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock>Личный кабинет</TextBlock>
+                </TabItem.Header>
+                <Grid Grid.Column="0" Grid.Row="0" Margin="10" >
+                    <Label x:Name="labell" Content="Админ" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="68" Height="42"/>
+                    <Label x:Name="labell1" HorizontalAlignment="Left" Margin="91,4,0,0" VerticalAlignment="Top" Width="179" Height="28"/>
+                    <Label x:Name="label" Content="Просмотреть информацию о клиентах
+                           " HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,261" Width="260"/>
+                    <DataGrid  ItemsSource="{Binding}"  x:Name="User_Grid" Background="#FFFAFAFA" HorizontalAlignment="Left" Height="173" Margin="10,77,0,0" VerticalAlignment="Top" Width="260" SelectionChanged="User_Grid_SelectionChanged" AlternatingRowBackground="LightSkyBlue" HorizontalGridLinesBrush="#FFDEDEDE" BorderBrush="#89000000" Foreground="#DD000000"/>
+                    <Button x:Name="button" Content="Показать" HorizontalAlignment="Left" Margin="91,255,0,0" VerticalAlignment="Top" Width="75" Click="View_CLick">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FF3D46FF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+
+
+                </Grid>
+
+            </TabItem>
+
+        </TabControl>
+
+
+    </Grid>
+
+</Window>
